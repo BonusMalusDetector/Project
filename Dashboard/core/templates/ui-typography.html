@@ -1,0 +1,269 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Typography {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="card">
+  <div class="card-header card-header-danger">
+    <h3 class="card-title">Prediction</h3>
+    <h4 class="card-category"> <b>Bonus Malus Class </b> </h4>
+  </div>
+  <div class="card-body" >
+    <div id="typography">
+      <div class="card-title">
+      </div>
+      <form>
+        <div class="row">
+          <div class="col-md-5">
+            <div class="form-group">
+              <select  name="USE" class="form-control" title="Single Select" required>
+                <option value=""> Car use</option>
+                
+                <option value="2">Private and business</option>
+                <option value="4">Public transport of goods (with dangerous and flammable material)</option>
+                <option value="5">Utility 1 vehicle with GVW < 3500 kg (including road use)</option>
+                <option value="6">Utility 1 vehicle with GVW > 3500 kg (including road use) </option>
+                <option value="3">Taxi</option>
+                <option value="0">Agricultural 1 vehicle with GVM < 3500 kg</option>
+                <option value="1">Others</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="col-md-5">
+
+
+
+            <div class="form-group ">
+              <select name="GROUP" class="form-control" title="Single Select" required>
+                <option value=""  > Car groups</option>
+                <option value="1">BMW</option>
+                <option value="2">DAIMLER</option>
+                <option value="3">FORD</option>
+                <option value="4">GENERAL_MOTORS</option>
+                <option value="5">HYUNDAI</option>
+                <option value="6">ISUZU</option>
+                <option value="7">MAZDA</option>
+                <option value="8">Renault Nissan Mitsubishi</option>
+                <option value="9">STELLLANTIS</option>
+                <option value="10">TOYOTA</option>
+                <option value="11">VOLKSWAGEN_AG</option>
+                <option value="0">Others</option>        
+                
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-5">
+            <div class="form-group">
+              <select name="VRT" class="form-control" title="Single Select" required>
+                <option value=""> Vehicule Registration Type </option>
+                <option value="3">TU</option>
+                <option value="1">RS</option>
+                <option value="2">TRAC</option>
+                <option value="0">ES </option>
+                <option value="0">CD</option>
+                <option value="0">MD</option>
+                <option value="0">OTHERS</option>
+
+              </select>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="form-group">
+              <select name="ENERGIE" class="form-control" title="Single Select" required>
+
+                <option value=""  > Energy </option>
+                <option value="1">Gasoline</option>
+                <option value="2">Diesel</option>
+                <option value="0">Gasoline-Diesel gpl</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-5">
+            <div class="form-group">
+              <label class="bmd-label-floating">Fiscal Power</label>
+              <input required="True" type="number" min="1" class="form-control" name="FP">
+            </div>
+          </div>
+          <div  class="col-md-5">
+            <div class="form-group">
+              <label class="bmd-label-floating">Driving Experience</label>
+              <input required="True" type="number" min="1" class="form-control" name="EXP">
+            </div>
+          </div>
+        </div>      
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="bmd-label-floating">Nature Police</label>
+              <div>
+                <label class="form-check-label">
+                  <span style="margin-right: 3mm;" ></span>
+                  <input class="form-check-input"  type="radio" name="NaturePolice" id="exampleRadios1" value="0">
+                  Renewable
+                  <span class="circle" >
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>
+
+              <div>
+
+                </span>
+                <label class="form-check-label">
+                  <span style="margin-right: 3mm;" ></span>
+                  <input class="form-check-input " type="radio" name="NaturePolice" id="exampleRadios2" value="1"
+                    checked>
+                    Temporary
+                  <span class="circle">
+                    <span class="check "></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="bmd-label-floating"> Police Type</label>
+              <div>
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="TypePolice" id="example_Radios1" value="1">
+                  Flotte
+                  <span class="circle">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>
+              <div>
+                <label class="form-check-label">
+                  <input class="form-check-input " type="radio" name="TypePolice" id="example_Radios2"
+                    value="0" checked>
+                    Individual
+                  <span class="circle">
+                    <span class="check "></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="bmd-label-floating"> Police State</label>
+              <div>
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="EtatPolice" id="example_RadiosI1" value="2">
+                   Vigor
+                  <span class="circle">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>
+              <div>
+                <label class="form-check-label">
+                  <input class="form-check-input " type="radio" name="EtatPolice" id="example_RadiosI2" value="0"
+                    checked>
+                    Terminated
+                  <span class="circle">
+                    <span class="check "></span>
+                  </span>
+                </label>
+              </div>
+
+              <div>
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="EtatPolice" id="example_RadiosI3" value="1">
+                  Suspended
+                  <span class="circle">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="bmd-label-floating">Intermediate Type</label>
+              <div>
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="TypeIntermidaire" id="example_RadiosII1" value="1">
+                  Agent  
+
+                  <span class="circle">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>
+              <div>
+                <label class="form-check-label">
+                  <input class="form-check-input " type="radio" name="TypeIntermidaire" id="example_RadiosII2" value="2"
+                    checked>
+                    Office 
+                  <span class="circle">
+                    <span class="check "></span>
+                  </span>
+                </label>
+              </div>
+
+              <div>
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="TypeIntermidaire" id="example_RadiosII3" value="3">
+                  Broker
+                  <span class="circle">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-danger pull-right ">Predict</button>
+        <div class="clearfix"></div>
+      </form>
+      {% if ans == '[0]' %}
+       
+
+      <h2 style="text-align: center;" > <span class="badge badge-success">Good Driver</span></h2>
+
+      {% endif %}
+
+      {% if ans == '[1]' %}
+       
+      <h2 style="text-align: center;"> <span class="badge badge-warning" >Medium Driver</span></h2>
+
+
+     {% endif %}
+
+     {% if ans == '[2]' %}
+       
+
+     <h2 style="text-align: center;" > <span class="badge badge-danger">Bad Driver</span></h2>
+
+
+    {% endif %}
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock content %}
+<script>
+  
+
+</script>
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

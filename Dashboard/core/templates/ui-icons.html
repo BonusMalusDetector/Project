@@ -1,0 +1,166 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Icons {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+        <div class="container-fluid">
+            <div class="card card-plain">
+              <div class="card-header card-header-danger">
+                <h3 class="card-title">Prediction</h3>
+                <h4 class="card-category">Accidents / Weather state
+                  
+                </h4>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-body">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Temperature</label>
+                              <input required="True" type="number"  class="form-control" name="TEMP">
+                            </div>
+                          </div>
+              
+                        </div>
+                        <div class="col-md-5">
+              
+              
+              
+                          <div class="form-group">
+                            <label class="bmd-label-floating">wind speed</label>
+                            <input required="True" type="number" min="0" class="form-control" name="VENT">
+                          </div>
+                        </div>
+                      </div>
+              
+              
+                      <div class="row">
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Humidity</label>
+                            <input required="True" type="number"  class="form-control" name="humidite">
+                          </div>
+                        </div>
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Visibility</label>
+                            <input required="True" type="number"  class="form-control" name="Visibilite">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+              
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Precipitation</label>
+                            <input required="True" type="number"  class="form-control" name="Precipitations">
+                          </div>
+                        </div>
+                        <div  class="col-md-5">
+                          <div class="form-group">
+                            <label class="label"> Date </label>
+                            <input required="True" name="DATE" class="form-control" type="date"></input>
+                          </div>
+                        </div>
+              
+                      </div>
+                      <div class="row">
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            
+                            <select name="Location" class="form-control" title="Single Select" required>
+                              <option value=""> Location</option>
+                              <option value="beja">beja</option>
+                              <option value="ben arous">ben arous</option>
+                              <option value="kairouan">kairouan</option>
+                              <option value="kasserine">kasserine</option>
+                              <option value="medenine">medenine</option>
+                              <option value="monastir">monastir</option>
+                              <option value="sfax">sfax</option>
+                              <option value="sousse">sousse</option>
+                              <option value="tozeur">tozeur</option>
+                              <option value="tunis">tunis</option>
+                              <option value="bizerte">bizerte</option>
+                              <option value="gabes">gabes</option>
+                              <option value="gafsa">gafsa</option>
+                              <option value="jendouba">jendouba</option>
+                              <option value="siliana">siliana</option>
+                              <option value="kebili">kebili</option>
+                              <option value="sidi bouzid">sidi bouzid</option>
+                              <option value="zaghouan">zaghouan</option>
+                              <option value="tataouine">tataouine</option>
+                              <option value="ariana">ariana</option>
+                              <option value="manouba">manouba</option>
+                            </select>
+             
+                          </div>
+                        </div>
+                        <div class="col-md-5">
+                          <div class="form-group">
+
+                            <select name="STATE" class="form-control" title="Single Select" required> 
+                              <option value="" > Weather state</option>
+                              <option value="Nuageux">Cloudy</option>
+                              <option value="Couvert">Covered</option>
+                              <option value="Soleil et partiellement nuageux">Sunny and partly cloudy</option>
+                              <option value="Ciel dégagé  pleinement ensoleillé">Clear and sunny sky</option>
+                              <option value="Foyers orageux à proximité">Thunderstorm outbreaks nearby</option>
+                              <option value="Averses de pluie et orages">Rain showers and storms</option>
+                              <option value="Pluie légère et soleil">Light rain and sunny</option>
+                              <option value="Faibles averses de pluie">Light rain showers</option>
+                              <option value="Bruine légère partielle">Partial light drizzle</option>
+                              <option value="Faible pluie en continue">Continuous low precipitation</option>
+                              <option value="Faible pluie non continue">Low and non-continuous rain</option>
+                              <option value="Pluie modérée en continue">Continuous moderate rain</option>
+                              <option value="Pluie forte ou modéré">Heavy or moderate rain</option>
+                              <option value="Pluie modérée non continue">Moderate non-continuous rain</option>
+                              <option value="Bruine légère">Light drizzle</option>
+                              <option value="Forte pluie et orages">Heavy rain and storms</option>
+                              <option value="Forte pluie continue">Continuous heavy rain</option>
+                            </select>
+                           
+                          </div>
+                        </div>
+            
+  
+                      </div>
+                      <button type="submit" class="btn btn-danger pull-right ">Predict</button>
+                      <div class="clearfix"></div>
+                    </form>
+                    {% if y >= 0 %}
+                    {% if  y <= 4 %}
+                    <h3> Estimated number of accidents :</h3>
+                     <h1 style="text-align: center;" class="text-success"> {{y}} </h1>
+                    {% endif %}
+                    {% if  y >= 5 %}
+                    {% if  y < 10  %}
+                    <h3> Estimated number of accidents :</h3>
+                    <h1 style="text-align: center;" class="text-warning"> {{y}} </h1>
+                    {% endif %}
+                    {% endif %}
+
+                    {% if  y > 10 %}
+                    <h3 style="text-align: center;" > Estimated number of accidents :</h3>
+
+                    <h1 style="text-align: center;" class="text-danger"> {{y}} </h1>
+                    {% endif %}
+                    {% endif %}
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

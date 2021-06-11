@@ -1,0 +1,319 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Maps {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="card card-plain">
+    <div class="card-header card-header-danger">
+      <h3 class="card-title">Prediction</h3>
+      <h4 class="card-category"><b>Fraud</b></h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label class="label">Sinistre date</label>
+                  <input required="True" name="DATESS" class="form-control" type="date"></input>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label class="label">Policy effective date</label>
+                  <input required="True" name="DATEEP" class="form-control" type="date"></input>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Percentage of responsability</label>
+                  <input required="True" type="number" min="0" max="100" class="form-control" name="Responsablite">
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Sinitre hour </label>
+                  <input required="True" type="number" min="0" max="23" class="form-control" name="HeureSS">
+                </div>
+              </div>
+
+            </div>
+
+
+
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group">
+
+                  <select name="LieuSinistre" class="form-control" title="Single Select" required>
+                    <option value=""> Sinistre location</option>
+                    <option value="1">beja</option>
+                    <option value="2">ben arous</option>
+                    <option value="8">kairouan</option>
+                    <option value="9">kasserine</option>
+                    <option value="14">medenine</option>
+                    <option value="15">monastir</option>
+                    <option value="17">sfax</option>
+                    <option value="20">sousse</option>
+                    <option value="22">tozeur</option>
+                    <option value="23">tunis</option>
+                    <option value="3">bizerte</option>
+                    <option value="4">gabes</option>
+                    <option value="5">gafsa</option>
+                    <option value="7">jendouba</option>
+                    <option value="19">siliana</option>
+                    <option value="10">kebili</option>
+                    <option value="11">kef</option>
+                    <option value="12">mahdia</option>
+                    <option value="18">sidi bouzid</option>
+                    <option value="24">zaghouan</option>
+                    <option value="21">tataouine</option>
+                    <option value="0">ariana</option>
+                    <option value="16">nabeul</option>
+                    <option value="13">manouba</option>
+                  </select>
+
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group">
+
+                  <select name="BMC" class="form-control" title="Single Select" required>
+                    <option value=""> Bonus Malus Class</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                  </select>
+
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <select name="USE" class="form-control" title="Single Select" required>
+                    <option value=""> Car use</option>
+
+                    <option value="8">Private and business</option>
+                    <option value="11">Private transport of people (staff / children / association member)</option>
+                    <option value="14">Utility 1 vehicle with GVW < 3500 kg (including road use)</option>
+                    <option value="5">Construction machinery </option>
+                    <option value="12">Public transport of goods (with dangerous and flammable material)</option>
+                    <option value="15">Utility 2 vehicle with GVW> 3500 kg (including roads)</option>
+                    <option value="2">Agricultural Tractor and Combine Harvester</option>
+                    <option value="0">Hotels and travels companies</option>
+                    <option value="4">Driving school</option>
+                    <option value="3">Agricultural 1 vehicle with GVM < 3500 kg</option>
+                    <option value="9">Taxi</option>
+                    <option value="10">Transport Rural</option>
+                    <option value="16">Others</option>
+                    <option value="7">Renting</option>
+                    <option value="6">Location</option>
+                    <option value="1">Agricultural 2 vehicle with GVW> 3500 kg</option>
+                    <option value="13">Public passenger transport</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-group ">
+                  <select name="GROUP_CAR" class="form-control" title="Single Select" required>
+                    <option value=""> Car groups</option>
+                    <option value="STELLLANTIS">STELLLANTIS</option>
+                    <option value="VOLKSWAGEN_AG">VOLKSWAGEN_AG</option>
+                    <option value="VOLKSWAGEN_AG">RenaultNissanMitsubishi</option>
+                    <option value="FORD">FORD</option>
+                    <option value="ISUZU">ISUZU</option>
+                    <option value="HYUNDAI">HYUNDAI</option>
+                    <option value="DAIMLER">DAIMLER</option>
+                    <option value="TOYOTA">TOYOTA</option>
+                    <option value="BMW">BMW</option>
+                    <option value="MAZDA">MAZDA</option>
+                    <option value="GENERAL_MOTORS">GENERAL_MOTORS</option>
+                    <option value="TATA_MOTORS">TATA_MOTORS</option>
+                    <option value="MAHINDRA">MAHINDRA</option>
+                    <option value="GEELY">GEELY</option>
+                    <option value="CHERY">CHERY</option>
+                    <option value="SUZUKI">SUZUKI</option>
+                    <option value="HONDA">HONDA</option>
+                    <option value="AGCO">AGCO</option>
+                    <option value="WALLYSCAR">WALLYSCAR</option>
+                    <option value="Autres_Group">Others</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Police State</label>
+                  <div>
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="EtatPolice" id="example_RadiosI1" value="2" checked>
+                      Vigor
+                      <span class="circle">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div>
+                    <label class="form-check-label">
+                      <input class="form-check-input " type="radio" name="EtatPolice" id="example_RadiosI2" value="0"
+                      >
+                      Terminated
+                      <span class="circle">
+                        <span class="check "></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div>
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="EtatPolice" id="example_RadiosI3" value="1">
+                      Suspended
+                      <span class="circle">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Nature Police</label>
+                  <div>
+                    <label class="form-check-label">
+                      <span style="margin-right: 3mm;"></span>
+                      <input class="form-check-input" type="radio" name="NaturePolice" id="exampleRadios1" value="0" checked>
+                      Renewable
+                      <span class="circle">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div>
+
+                    </span>
+                    <label class="form-check-label">
+                      <span style="margin-right: 3mm;"></span>
+                      <input class="form-check-input " type="radio" name="NaturePolice" id="exampleRadios2" value="1"
+                        >
+                      Temporary
+                      <span class="circle">
+                        <span class="check "></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label class="bmd-label-floating"> Police Type</label>
+                  <div>
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="TypePolice" id="example_Radios1" value="1" checked>
+                      Flotte
+                      <span class="circle">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div>
+                    <label class="form-check-label">
+                      <input class="form-check-input " type="radio" name="TypePolice" id="example_Radios2" value="0"
+                        >
+                      Individual
+                      <span class="circle">
+                        <span class="check "></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label class="bmd-label-floating">Sinistre nature</label>
+                  <div>
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="NatureSinistre" id="example_RadiosII1"
+                        value="0" checked>
+                      Material
+
+                      <span class="circle">
+                        <span class="check"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div>
+                    <label class="form-check-label">
+                      <input class="form-check-input " type="radio" name="NatureSinistre" id="example_RadiosII2"
+                        value="1">
+                      Bodily
+                      <span class="circle">
+                        <span class="check "></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-danger pull-right ">Predict</button>
+            <div class="clearfix"></div>
+          </form>
+          {% if ans == '[0]' %}
+       
+
+          <h2 style="text-align: center;" > <span class="badge badge-success">Not Fraud</span></h2>
+    
+          {% endif %}
+    
+          {% if ans == '[1]' %}
+           
+          <h2 style="text-align: center;"> <span class="badge badge-danger" >Fraud</span></h2>
+    
+    
+         {% endif %}
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script>
+  $(document).ready(function () {
+    // Javascript method's body can be found in assets/js/demos.js
+    demo.initGoogleMaps();
+  });
+</script>
+
+{% endblock javascripts %}
